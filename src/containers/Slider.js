@@ -1,24 +1,29 @@
 import React from "react";
 import styled from "styled-components";
-import posed from "react-pose"
+import posed, {PoseGroup} from 'react-pose';
+import {ImageCharacter} from "../components/ImageCharacter";
 
 export default class Slider extends React.Component {
 
     render() {
+        const {data} = this.props;
         return (
             <StyledSlider>
-                {this.props.children}
+                <PoseGroup>
+                    {data.map(({id, imageUrl}) =>
+                        <SliderPosed key={id}>
+                            <ImageCharacter
+                                image={imageUrl}
+                            />
+                        </SliderPosed>
+                    )}
+                </PoseGroup>
             </StyledSlider>
         )
     }
 }
 
-
-
-const SliderPosed = posed.div({
-    draggable: 'x',
-    dragBounds: { left: '-100%', right: '100%' }
-});
+const SliderPosed = posed.div({});
 
 const StyledSlider = styled(SliderPosed)`
     width: 80%;

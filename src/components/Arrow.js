@@ -2,9 +2,12 @@ import React from 'react';
 import styled from "styled-components";
 import {backgroundColor} from "../styles/cosnts";
 
-export const Arrow = ({text, side}) => {
+export const Arrow = ({text, side, onClick}) => {
     return (
-        <Button side={side}>
+        <Button
+            side={side}
+            onClick={onClick}
+        >
             <Name>{text}</Name>
         </Button>
     );

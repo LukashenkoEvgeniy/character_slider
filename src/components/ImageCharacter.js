@@ -2,28 +2,23 @@ import React from "react";
 import styled from "styled-components";
 import posed from "react-pose"
 
-import img from "../assets/with_cap.png";
-import img2 from "../assets/boy copy.png";
-
-
-export const ImageCharacter = ({bool}) => {
+export const ImageCharacter = ({image}) => {
+    const onClick = () => {
+        console.log('click')
+    };
     return (
-        <ImageBlock>
+        <ImageBlock onClick={onClick}>
             <Circle>
-                <StyledImage src={bool? img:img2}/>
+                <StyledImage src={image}/>
             </Circle>
         </ImageBlock>
     );
-
 };
-
-
 
 const Image = posed.img({
     hoverable: true,
     init: {
         scale: 1.0,
-
     },
     hover: {
         scale: 1.03,

@@ -3,26 +3,67 @@ import styled from "styled-components";
 
 import {Arrow} from "../components/Arrow";
 import Slider from "./Slider";
-import {ImageCharacter} from "../components/ImageCharacter";
 
-export const Content = () => {
-    return (
-        <Block>
-            <Arrow
-                side={'left'}
-                text={'< НАЗАД'}
-            />
-            <Slider>
-                <ImageCharacter bool={true}/>
-                <ImageCharacter bool={false}/>
-                <ImageCharacter bool={true}/>
-            </Slider>
-            <Arrow
-                side={'right'}
-                text={'ДАЛI >'}
-            />
-        </Block>
-    );
+import img from "../assets/with_cap.png";
+import img2 from "../assets/boy copy.png";
+
+export default class Content extends React.Component {
+
+    state = {
+        items: [
+            {
+                id: 1,
+                imageUrl: img2
+            }, {
+                id: 2,
+                imageUrl: img
+            }, {
+                id: 3,
+                imageUrl: img
+            },
+        ]
+    };
+
+    slideRight(array) {
+        let lastElement = array[array.length - 1];
+        for (let index = array.length - 2; index >= 0; index--) {
+            array[index + 1] = array [index];
+        }
+        array[0] = lastElement;
+        return array;
+    }
+
+    slideLeft(array) {
+        let firstElement = array[0];
+        for (let index = 1; index <= array.length - 1; index++) {
+            array[index - 1] = array [index];
+        }
+        array[array.length - 1] = firstElement;
+        return array;
+    }
+
+    render() {
+        const {items} = this.state;
+        return (
+            <Block>
+                <Arrow
+                    onClick={() => this.setState({items: this.slideLeft(this.state.items)})}
+                    side={'left'}
+                    text={'< НАЗАД'}
+                />
+                <Slider
+                    data={items}
+                />
+                <Arrow
+                    onClick={() => this.setState({items: this.slideRight(this.state.items)})}
+
+                    side={'right'}
+                    text={'ДАЛI >'}
+                />
+            </Block>
+        );
+    }
+    ;
 };
 
 const Block = styled.div`

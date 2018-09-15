@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styled from "styled-components";
-import {Content} from "./containers/Content";
+import Content from "./containers/Content";
 import {backgroundColor} from "./styles/cosnts";
 
 class App extends Component {
