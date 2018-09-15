@@ -1,19 +1,27 @@
 import React from "react";
 import styled from "styled-components";
+import posed from "react-pose"
 
 export default class Slider extends React.Component {
 
     render() {
         return (
-            <SliderContent>
+            <StyledSlider>
                 {this.props.children}
-            </SliderContent>
+            </StyledSlider>
         )
     }
 }
 
-const SliderContent = styled.div`
+
+
+const SliderPosed = posed.div({
+    draggable: 'x',
+    dragBounds: { left: '-100%', right: '100%' }
+});
+
+const StyledSlider = styled(SliderPosed)`
     width: 80%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 `;

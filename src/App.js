@@ -3,7 +3,6 @@ import styled from "styled-components";
 import {Content} from "./containers/Content";
 import {backgroundColor} from "./styles/cosnts";
 
-
 class App extends Component {
     render() {
         return (
@@ -13,7 +12,6 @@ class App extends Component {
         );
     }
 }
-
 export default App;
 
 const Body = styled.main`
@@ -23,4 +21,3 @@ const Body = styled.main`
   align-items: center;
   background: ${backgroundColor};;
 `;
-

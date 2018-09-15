@@ -13,10 +13,9 @@ export const Content = () => {
                 text={'< НАЗАД'}
             />
             <Slider>
-                <ImageCharacter></ImageCharacter>
-                <ImageCharacter></ImageCharacter>
-                <ImageCharacter></ImageCharacter>
-
+                <ImageCharacter bool={true}/>
+                <ImageCharacter bool={false}/>
+                <ImageCharacter bool={true}/>
             </Slider>
             <Arrow
                 side={'right'}
