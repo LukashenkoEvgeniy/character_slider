@@ -1,14 +1,14 @@
 # Character slider
 
-##### About
+## About
 Simple application for sliding characters by click on next or previous buttons.
 
 ![](./src/assets/Slider.gif)
 
-##### Demo
+## Demo
 Avaliable on [this location](https://lukashenkoevgeniy.github.io/character_slider/)
 
-##### Frameworks and libs
+## Frameworks and libs
 
 + Package manager - [npm](https://www.npmjs.com)
 + Builder - [Webpack](https://webpack.js.org/)
@@ -17,22 +17,22 @@ Avaliable on [this location](https://lukashenkoevgeniy.github.io/character_slide
 + Animations - [Pose](https://popmotion.io/pose/)
 
 
-##### Run and build
+## Run and build
 
-Pull project and **install dependencies**:
+### Pull project and **install dependencies**:
 
 
 `npm install`
 
 
-Run project:
+### Run project:
 
 `webpack-dev-server --mode development --hot`
 
 
 It will be available by the link http://localhost:8080/
 
-For **build project** run following command:
+### For **build project** run following command:
 
 
 `webpack --mode production`
