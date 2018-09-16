@@ -17,6 +17,7 @@ const Name = styled.p`
   font-weight: bold;
 `;
 const Button = styled.div`
+  cursor: pointer;
   width: 120px;
   height: 50px;
   border-radius: 2px;
