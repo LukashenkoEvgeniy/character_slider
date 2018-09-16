@@ -3,11 +3,8 @@ import styled from "styled-components";
 import posed from "react-pose"
 
 export const ImageCharacter = ({image}) => {
-    const onClick = () => {
-        console.log('click')
-    };
     return (
-        <ImageBlock onClick={onClick}>
+        <ImageBlock>
             <Circle>
                 <StyledImage src={image}/>
             </Circle>
@@ -22,7 +19,7 @@ const Image = posed.img({
     },
     hover: {
         scale: 1.03,
-        transaction:{type: "spring"}
+        transaction: {type: "spring"}
     }
 });
 
@@ -35,6 +32,9 @@ const StyledImage = styled(Image)`
     &:hover{
       bottom: 3px
     }
+    @media(max-width: 1024px) {
+        right: 0;
+     }
 `;
 const ImageBlock = styled.div`
     display: flex;
@@ -48,7 +48,7 @@ const ImageBlock = styled.div`
     }
 `;
 const Circle = styled.div`
-   border: 3px solid rgb(255,255,255, 0.7);
+   border: 3px solid aliceblue;
    width: 100%;
    height: 100%;
    border-radius: 200px;

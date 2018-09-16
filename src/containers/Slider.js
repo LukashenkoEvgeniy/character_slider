@@ -29,7 +29,9 @@ const SliderPosed = posed.div({
         transition: {
             scale: {
                 type: 'spring',
-                velocity: 5
+                velocity: 1,
+                stiffness: 1000,
+                mass: 2,
             },
             default: {
                 type: 'spring'
