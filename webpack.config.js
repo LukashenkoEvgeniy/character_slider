@@ -5,6 +5,9 @@ module.exports = {
     entry: {
         main: './src/index.js'
     },
+    output: {
+        path: __dirname + "/docs",
+    },
     devtool: 'source-map',
     resolve: {
         extensions: ['.js', '.jsx']
