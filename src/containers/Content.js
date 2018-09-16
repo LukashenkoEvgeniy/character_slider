@@ -73,4 +73,9 @@ const Block = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: 0 50px 0 50px ;
+   @media(max-width: 590px) {
+        height: 100%;
+        margin: 5px;
+
+    }
 `;

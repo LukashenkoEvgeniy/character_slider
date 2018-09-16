@@ -23,10 +23,27 @@ export default class Slider extends React.Component {
     }
 }
 
-const SliderPosed = posed.div({});
+const SliderPosed = posed.div({
+    flip: {
+        scale: 1,
+        transition: {
+            scale: {
+                type: 'spring',
+                velocity: 5
+            },
+            default: {
+                type: 'spring'
+            }
+        }
+    }
+});
 
 const StyledSlider = styled(SliderPosed)`
     width: 80%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    @media(max-width: 1024px) {
+        flex-direction: column;
+    }
 `;

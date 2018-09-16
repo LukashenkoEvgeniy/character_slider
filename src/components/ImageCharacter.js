@@ -30,17 +30,22 @@ const StyledImage = styled(Image)`
     bottom: 0px;
     position: relative;
     right: 5px;
-    height: 200px;
-    width: 194px;
+    height: 100%;
+    width: calc(100% - 6);
     &:hover{
       bottom: 3px
     }
 `;
 const ImageBlock = styled.div`
+    display: flex;
     width: 200px;
     height: 200px;
-    display: flex;
-    margin: 0 15px 0 15px;
+    margin: 15px;
+    @media(max-width: 1024px) {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+    }
 `;
 const Circle = styled.div`
    border: 3px solid rgb(255,255,255, 0.7);
